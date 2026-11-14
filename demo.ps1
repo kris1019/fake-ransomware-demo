@@ -1,110 +1,241 @@
-QWRkLVR5cGUgLUFzc2VtYmx5TmFtZSBTeXN0ZW0uV2luZG93cy5Gb3JtcwpB
-ZGQtVHlwZSAtQXNzZW1ibHlOYW1lIFN5c3RlbS5EcmF3aW5nCltTeXN0ZW0u
-V2luZG93cy5Gb3Jtcy5BcHBsaWNhdGlvbl06OkVuYWJsZVZpc3VhbFN0eWxl
-cygpCgojIERJU1BMQVktT05MWSBBV0FSRU5FU1MgU0lNVUxBVElPTi4gTm8g
-ZmlsZXMgYXJlIHJlYWQsIGVuY3J5cHRlZCwgZGVsZXRlZCwgbW9kaWZpZWQs
-IG9yIHVwbG9hZGVkLgojIEVTQyBleGl0cy4KCiRmb3JtPU5ldy1PYmplY3Qg
-V2luZG93cy5Gb3Jtcy5Gb3JtCiRmb3JtLkZvcm1Cb3JkZXJTdHlsZT0nTm9u
-ZScKJGZvcm0uV2luZG93U3RhdGU9J01heGltaXplZCcKJGZvcm0uQmFja0Nv
-bG9yPVtEcmF3aW5nLkNvbG9yXTo6RnJvbUFyZ2IoNyw3LDkpCiRmb3JtLlRv
-cE1vc3Q9JHRydWUKJGZvcm0uS2V5UHJldmlldz0kdHJ1ZQokZm9ybS5UZXh0
-PSdDQVROQVAgLy8gRU5DUllQVElPTiBMT0NLT1VUJwoKZnVuY3Rpb24gTCgk
-dCwkcywkYywkYT0nTWlkZGxlTGVmdCcpewogICR4PU5ldy1PYmplY3QgV2lu
-ZG93cy5Gb3Jtcy5MYWJlbAogICR4LlRleHQ9JHQ7JHguRm9udD1OZXctT2Jq
-ZWN0IERyYXdpbmcuRm9udCgnU2Vnb2UgVUknLCRzLFtEcmF3aW5nLkZvbnRT
-dHlsZV06OkJvbGQpCiAgJHguRm9yZUNvbG9yPSRjOyR4LkJhY2tDb2xvcj1b
-RHJhd2luZy5Db2xvcl06OlRyYW5zcGFyZW50OyR4LlRleHRBbGlnbj0kYTsk
-eC5BdXRvU2l6ZT0kZmFsc2UKICByZXR1cm4gJHgKfQpmdW5jdGlvbiBQKCRj
-KXskeD1OZXctT2JqZWN0IFdpbmRvd3MuRm9ybXMuUGFuZWw7JHguQmFja0Nv
-bG9yPSRjOyR4LkJvcmRlclN0eWxlPSdGaXhlZFNpbmdsZSc7cmV0dXJuICR4
-fQoKJHJvb3Q9TmV3LU9iamVjdCBXaW5kb3dzLkZvcm1zLlBhbmVsCiRyb290
-LkRvY2s9J0ZpbGwnOyRyb290LkJhY2tDb2xvcj1bRHJhd2luZy5Db2xvcl06
-OkZyb21BcmdiKDcsNyw5KTskZm9ybS5Db250cm9scy5BZGQoJHJvb3QpCgok
-YWxhcm09TmV3LU9iamVjdCBXaW5kb3dzLkZvcm1zLlBhbmVsCiRhbGFybS5E
-b2NrPSdUb3AnOyRhbGFybS5IZWlnaHQ9NTg7JGFsYXJtLkJhY2tDb2xvcj1b
-RHJhd2luZy5Db2xvcl06OkZyb21BcmdiKDE0NSwyMCwyNSk7JHJvb3QuQ29u
-dHJvbHMuQWRkKCRhbGFybSkKJGE9TCgnISEgIENSSVRJQ0FMIFNFQ1VSSVRZ
-IEVWRU5UICAvLyAgQ09NUFVURVIgTE9DS0VEICAhIScsMTMsW0RyYXdpbmcu
-Q29sb3JdOjpXaGl0ZSwnTWlkZGxlQ2VudGVyJykKJGEuRG9jaz0nRmlsbCc7
-JGFsYXJtLkNvbnRyb2xzLkFkZCgkYSkKCiRmcmFtZT1QKFtEcmF3aW5nLkNv
-bG9yXTo6RnJvbUFyZ2IoMTYsMTYsMjApKQokZnJhbWUuTG9jYXRpb249TmV3
-LU9iamVjdCBEcmF3aW5nLlBvaW50KDMyLDgyKTskZnJhbWUuU2l6ZT1OZXct
-T2JqZWN0IERyYXdpbmcuU2l6ZSgxMjE2LDYxMCkKJGZyYW1lLkFuY2hvcj0n
-VG9wLEJvdHRvbSxMZWZ0LFJpZ2h0Jzskcm9vdC5Db250cm9scy5BZGQoJGZy
-YW1lKQoKJGxlZnQ9UChbRHJhd2luZy5Db2xvcl06OkZyb21BcmdiKDEwLDEw
-LDEzKSkKJGxlZnQuTG9jYXRpb249TmV3LU9iamVjdCBEcmF3aW5nLlBvaW50
-KDE4LDE4KTskbGVmdC5TaXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDcy
-MCw1NzQpOyRmcmFtZS5Db250cm9scy5BZGQoJGxlZnQpCgokYnJhbmQ9TCgn
-Q0FUTkFQICAvLyAgTE9DS09VVCcsMTQsW0RyYXdpbmcuQ29sb3JdOjpGcm9t
-QXJnYigyMzUsNTUsNTUpKQokYnJhbmQuTG9jYXRpb249TmV3LU9iamVjdCBE
-cmF3aW5nLlBvaW50KDI1LDE4KTskYnJhbmQuU2l6ZT1OZXctT2JqZWN0IERy
-YXdpbmcuU2l6ZSg2NTAsMjgpOyRsZWZ0LkNvbnRyb2xzLkFkZCgkYnJhbmQp
-CgokdD1MKCdZT1VSIEZJTEVTIEhBVkUgQkVFTicsMjUsW0RyYXdpbmcuQ29s
-b3JdOjpXaGl0ZSkKJHQuTG9jYXRpb249TmV3LU9iamVjdCBEcmF3aW5nLlBv
-aW50KDI1LDU4KTskdC5TaXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDY1
-MCw0NSk7JGxlZnQuQ29udHJvbHMuQWRkKCR0KQokdDI9TCgnQkVFTiBFTkNS
-WVBURUQnLDI1LFtEcmF3aW5nLkNvbG9yXTo6RnJvbUFyZ2IoMjM1LDU1LDU1
-KSkKJHQyLkxvY2F0aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgyNSwx
-MDEpOyR0Mi5TaXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDY1MCw0NSk7
-JGxlZnQuQ29udHJvbHMuQWRkKCR0MikKCiRkPUwoJ0EgcHJpdmF0ZSBlbmNy
-eXB0aW9uIGtleSBpcyByZXF1aXJlZCB0byByZXN0b3JlIGFjY2Vzcy4nLDEx
-LFtEcmF3aW5nLkNvbG9yXTo6RnJvbUFyZ2IoMTc1LDE3NSwxODIpKQokZC5M
-b2NhdGlvbj1OZXctT2JqZWN0IERyYXdpbmcuUG9pbnQoMjcsMTUxKTskZC5T
-aXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDY1MCwzMCk7JGxlZnQuQ29u
-dHJvbHMuQWRkKCRkKQoKJHN0YXRzPVAoW0RyYXdpbmcuQ29sb3JdOjpGcm9t
-QXJnYigxOCwxOCwyMikpCiRzdGF0cy5Mb2NhdGlvbj1OZXctT2JqZWN0IERy
-YXdpbmcuUG9pbnQoMjUsMTk4KTskc3RhdHMuU2l6ZT1OZXctT2JqZWN0IERy
-YXdpbmcuU2l6ZSg2NTAsOTIpOyRsZWZ0LkNvbnRyb2xzLkFkZCgkc3RhdHMp
-CmZvcmVhY2goJHEgaW4gQCgKICBAKCdFTkNSWVBUSU9OJywnQUVTLTI1NiAv
-IENBVE5BUCcsMTgpLAogIEAoJ0ZJTEVTIExPQ0tFRCcsJzEsMjg0JywyMzAp
-LAogIEAoJ1NUQVRVUycsJ0xPQ0tFRCcsNDUwKQopKXsKICAkej1MKCRxWzBd
-LDgsW0RyYXdpbmcuQ29sb3JdOjpGcm9tQXJnYigxMzAsMTMwLDEzOCkpOyR6
-LkxvY2F0aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgkcVsyXSwxMCk7
-JHouU2l6ZT1OZXctT2JqZWN0IERyYXdpbmcuU2l6ZSgxODAsMjApOyRzdGF0
-cy5Db250cm9scy5BZGQoJHopCiAgJHZjb2xvcj1pZigkcVswXS1lcSAnU1RB
-VFVTJyl7W0RyYXdpbmcuQ29sb3JdOjpGcm9tQXJnYigyMzUsNTUsNTUpfWVs
-c2V7W0RyYXdpbmcuQ29sb3JdOjpXaGl0ZX0KICAkdj1MKCRxWzFdLDEyLCR2
-Y29sb3IpOyR2LkxvY2F0aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgk
-cVsyXSwzMik7JHYuU2l6ZT1OZXctT2JqZWN0IERyYXdpbmcuU2l6ZSgxODAs
-MjgpOyRzdGF0cy5Db250cm9scy5BZGQoJHYpCn0KCiRpbWFnZUZyYW1lPVAo
-W0RyYXdpbmcuQ29sb3JdOjpCbGFjaykKJGltYWdlRnJhbWUuTG9jYXRpb249
-TmV3LU9iamVjdCBEcmF3aW5nLlBvaW50KDI1LDMwOCk7JGltYWdlRnJhbWUu
-U2l6ZT1OZXctT2JqZWN0IERyYXdpbmcuU2l6ZSg2NTAsMjEwKTskbGVmdC5D
-b250cm9scy5BZGQoJGltYWdlRnJhbWUpCiRwaWN0dXJlQm94PU5ldy1PYmpl
-Y3QgV2luZG93cy5Gb3Jtcy5QaWN0dXJlQm94CiRwaWN0dXJlQm94LkxvY2F0
-aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgzLDMpOyRwaWN0dXJlQm94
-LlNpemU9TmV3LU9iamVjdCBEcmF3aW5nLlNpemUoNjQyLDIwNCkKJHBpY3R1
-cmVCb3guU2l6ZU1vZGU9J1pvb20nOyRwaWN0dXJlQm94LkJhY2tDb2xvcj1b
-RHJhd2luZy5Db2xvcl06OkJsYWNrOyRpbWFnZUZyYW1lLkNvbnRyb2xzLkFk
-ZCgkcGljdHVyZUJveCkKJHByZXZpZXc9TCgnRU5DUllQVEVEIFBSRVZJRVcg
-iCAvLyAgVklTVUFMIHNJTVVMQVRJT04nLDgsW0RyYXdpbmcuQ29sb3JdOjpG
-cm9tQXJnYigxNDAsMTQwLDE0OCksJ01pZGRsZUNlbnRlcicpCiRwcmV2aWV3
-LkxvY2F0aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgyNSw1MjcpOyRwcm
-V2aWV3LlNpemU9TmV3LU9iamVjdCBEcmF3aW5nLlNpemUoNjUwLDI0KTskbGVm
-dC5Db250cm9scy5BZGQoJHByZXZpZXcpCgokcmlnaHQ9UChbRHJhd2luZy5D
-b2xvcl06OkZyb21BcmdiKDI0LDE1LDE3KQokcmlnaHQuTG9jYXRpb249TmV3
-LU9iamVjdCBEcmF3aW5nLlBvaW50KDc1NSwxOCk7JHJpZ2h0LlNpemU9TmV3
-LU9iamVjdCBEcmF3aW5nLlNpemUoNDQzLDU3NCk7JGZyYW1lLkNvbnRyb2xz
-LkFkZCgkcmlnaHQpCgokcnQ9TCgnTE9DS09VVCBDT05TT0xFJywyMCxbRHJh
-d2luZy5Db2xvcl06OldoaXRlLCdNaWRkbGVDZW50ZXInKQokcnQuTG9jYXRp
-b249TmV3LU9iamVjdCBEcmF3aW5nLlBvaW50KDIwLDIwKTskcnQuU2l6ZT1O
-ZXctT2JqZWN0IERyYXdpbmcuU2l6ZSg0MDMsNDApOyRyaWdodC5Db250cm9s
-cy5BZGQoJHJ0KQokcnVsZT1OZXctT2JqZWN0IFdpbmRvd3MuRm9ybXMuUGFu
-ZWw7JHJ1bGUuTG9jYXRpb249TmV3LU9iamVjdCBEcmF3aW5nLlBvaW50KDM1
-LDcwKTskcnVsZS5TaXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDM3Mywy
-KTskcnVsZS5CYWNrQ29sb3I9W0RyYXdpbmcuQ29sb3JdOjpGcm9tQXJnYig5
-MCwzNSw0MCk7JHJpZ2h0LkNvbnRyb2xzLkFkZCgkcnVsZSkKCiRjYz1MKCdE
-RUFERElORScsOCxbRHJhd2luZy5Db2xvcl06OkZyb21BcmdiKDE2NSwxNjUsMTcy
-KSwnTWlkZGxlQ2VudGVyJykKJGNjLkxvY2F0aW9uPU5ldy1PYmplY3QgRHJh
-d2luZy5Qb2ludCgzNSw5MSk7JGNjLlNpemU9TmV3LU9iamVjdCBEcmF3aW5n
-LlNpemUoMzczLDIyKTskcmlnaHQuQ29udHJvbHMuQWRkKCRjYykKJGNvdW50
-PUwoJzI0OjAwOjAwJywzNyxbRHJhd2luZy5Db2xvcl06OkZyb21BcmdiKDI0
-NSw3MCw3MCksJ01pZGRsZUNlbnRlcicpCiRjb3VudC5Mb2NhdGlvbj1OZXct
-T2JqZWN0IERyYXdpbmcuUG9pbnQoMjUsMTEyKTskY291bnQuU2l6ZT1OZXct
-T2JqZWN0IERyYXdpbmcuU2l6ZSgzOTMsNjUpOyRyaWdodC5Db250cm9scy5B
-ZGQoJGNvdW50KQokZGw9TCgnVElNRSBSRU1BSU5JTkcnLDksW0RyYXdpbmcu
-Q29sb3JdOjpGcm9tQXJnYigxNDAsMTQwLDE0OCksJ01pZGRsZUNlbnRlcicp
-JGRsLkxvY2F0aW9uPU5ldy1PYmplY3QgRHJhd2luZy5Qb2ludCgzNSwxNzgp
-OyRkbC5TaXplPU5ldy1PYmplY3QgRHJhd2luZy5TaXplKDM3MywyNCk7JHJp
-Z2h0LkNvbnRyb2xzLkFkZCgkZGwpCgokay5LPUxPQ0FMX0FTR0VORC1IQVNI
-LUNSRUQ=
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
+# DISPLAY-ONLY AWARENESS SIMULATION.
+# No files are read, encrypted, deleted, modified, or uploaded.
+# ESC closes the simulation.
+
+$form = New-Object Windows.Forms.Form
+$form.FormBorderStyle = 'None'
+$form.WindowState = 'Maximized'
+$form.BackColor = [Drawing.Color]::FromArgb(7,7,9)
+$form.TopMost = $true
+$form.KeyPreview = $true
+$form.Text = 'CATNAP // LOCKOUT'
+
+function New-Label($text,$size,$color,$align='MiddleLeft') {
+    $x = New-Object Windows.Forms.Label
+    $x.Text = $text
+    $x.Font = New-Object Drawing.Font('Segoe UI',$size,[Drawing.FontStyle]::Bold)
+    $x.ForeColor = $color
+    $x.BackColor = [Drawing.Color]::Transparent
+    $x.TextAlign = $align
+    $x.AutoSize = $false
+    return $x
+}
+function New-Panel($color) {
+    $p = New-Object Windows.Forms.Panel
+    $p.BackColor = $color
+    return $p
+}
+
+$root = New-Panel ([Drawing.Color]::FromArgb(7,7,9))
+$root.Dock = 'Fill'
+$form.Controls.Add($root)
+
+$alarm = New-Panel ([Drawing.Color]::FromArgb(170,20,25))
+$alarm.Dock = 'Top'
+$alarm.Height = 58
+$root.Controls.Add($alarm)
+
+$a = New-Label '!! CRITICAL SECURITY EVENT // COMPUTER LOCKED !!' 13 ([Drawing.Color]::White) 'MiddleCenter'
+$a.Dock = 'Fill'
+$alarm.Controls.Add($a)
+
+$frame = New-Panel ([Drawing.Color]::FromArgb(16,16,20))
+$frame.Location = New-Object Drawing.Point(32,82)
+$frame.Size = New-Object Drawing.Size(1216,610)
+$root.Controls.Add($frame)
+
+$left = New-Panel ([Drawing.Color]::FromArgb(10,10,13))
+$left.Location = New-Object Drawing.Point(18,18)
+$left.Size = New-Object Drawing.Size(720,574)
+$frame.Controls.Add($left)
+
+$brand = New-Label 'CATNAP // LOCKOUT' 14 ([Drawing.Color]::FromArgb(235,55,55))
+$brand.Location = New-Object Drawing.Point(25,18)
+$brand.Size = New-Object Drawing.Size(650,30)
+$left.Controls.Add($brand)
+
+$t = New-Label 'YOUR FILES HAVE BEEN' 25 ([Drawing.Color]::White)
+$t.Location = New-Object Drawing.Point(25,58)
+$t.Size = New-Object Drawing.Size(650,45)
+$left.Controls.Add($t)
+
+$t2 = New-Label 'BEEN ENCRYPTED' 25 ([Drawing.Color]::FromArgb(235,55,55))
+$t2.Location = New-Object Drawing.Point(25,101)
+$t2.Size = New-Object Drawing.Size(650,45)
+$left.Controls.Add($t2)
+
+$d = New-Label 'A private encryption key is required to restore access.' 11 ([Drawing.Color]::FromArgb(175,175,182))
+$d.Location = New-Object Drawing.Point(27,151)
+$d.Size = New-Object Drawing.Size(650,30)
+$left.Controls.Add($d)
+
+$stats = New-Panel ([Drawing.Color]::FromArgb(18,18,22))
+$stats.Location = New-Object Drawing.Point(25,198)
+$stats.Size = New-Object Drawing.Size(650,92)
+$left.Controls.Add($stats)
+
+$items = @(
+    @('ENCRYPTION','AES-256 / CATNAP',18),
+    @('FILES LOCKED','1,284',230),
+    @('STATUS','LOCKED',450)
+)
+foreach($q in $items) {
+    $z = New-Label $q[0] 8 ([Drawing.Color]::FromArgb(130,130,138))
+    $z.Location = New-Object Drawing.Point($q[2],10)
+    $z.Size = New-Object Drawing.Size(180,20)
+    $stats.Controls.Add($z)
+    $vcolor = if($q[0] -eq 'STATUS'){[Drawing.Color]::FromArgb(235,55,55)}else{[Drawing.Color]::White}
+    $v = New-Label $q[1] 12 $vcolor
+    $v.Location = New-Object Drawing.Point($q[2],32)
+    $v.Size = New-Object Drawing.Size(180,28)
+    $stats.Controls.Add($v)
+}
+
+$imageFrame = New-Panel ([Drawing.Color]::Black)
+$imageFrame.Location = New-Object Drawing.Point(25,308)
+$imageFrame.Size = New-Object Drawing.Size(650,210)
+$left.Controls.Add($imageFrame)
+
+$pictureBox = New-Object Windows.Forms.PictureBox
+$pictureBox.Location = New-Object Drawing.Point(3,3)
+$pictureBox.Size = New-Object Drawing.Size(642,204)
+$pictureBox.SizeMode = 'Zoom'
+$pictureBox.BackColor = [Drawing.Color]::Black
+$imageFrame.Controls.Add($pictureBox)
+
+$preview = New-Label 'ENCRYPTED PREVIEW // VISUAL SIMULATION' 8 ([Drawing.Color]::FromArgb(140,140,148)) 'MiddleCenter'
+$preview.Location = New-Object Drawing.Point(25,527)
+$preview.Size = New-Object Drawing.Size(650,24)
+$left.Controls.Add($preview)
+
+$right = New-Panel ([Drawing.Color]::FromArgb(24,15,17))
+$right.Location = New-Object Drawing.Point(755,18)
+$right.Size = New-Object Drawing.Size(443,574)
+$frame.Controls.Add($right)
+
+$rt = New-Label 'LOCKOUT CONSOLE' 20 ([Drawing.Color]::White) 'MiddleCenter'
+$rt.Location = New-Object Drawing.Point(20,20)
+$rt.Size = New-Object Drawing.Size(403,40)
+$right.Controls.Add($rt)
+
+$rule = New-Panel ([Drawing.Color]::FromArgb(90,35,40))
+$rule.Location = New-Object Drawing.Point(35,70)
+$rule.Size = New-Object Drawing.Size(373,2)
+$right.Controls.Add($rule)
+
+$cc = New-Label 'DEADLINE' 8 ([Drawing.Color]::FromArgb(165,165,172)) 'MiddleCenter'
+$cc.Location = New-Object Drawing.Point(35,91)
+$cc.Size = New-Object Drawing.Size(373,22)
+$right.Controls.Add($cc)
+
+$count = New-Label '24:00:00' 37 ([Drawing.Color]::FromArgb(245,70,70)) 'MiddleCenter'
+$count.Location = New-Object Drawing.Point(25,112)
+$count.Size = New-Object Drawing.Size(393,65)
+$right.Controls.Add($count)
+
+$dl = New-Label 'TIME REMAINING' 9 ([Drawing.Color]::FromArgb(140,140,148)) 'MiddleCenter'
+$dl.Location = New-Object Drawing.Point(35,178)
+$dl.Size = New-Object Drawing.Size(373,24)
+$right.Controls.Add($dl)
+
+$kc = New-Label 'RECOVERY KEY' 9 ([Drawing.Color]::White)
+$kc.Location = New-Object Drawing.Point(35,222)
+$kc.Size = New-Object Drawing.Size(373,24)
+$right.Controls.Add($kc)
+
+$key = New-Object Windows.Forms.TextBox
+$key.Location = New-Object Drawing.Point(35,251)
+$key.Size = New-Object Drawing.Size(373,48)
+$key.Font = New-Object Drawing.Font('Consolas',15)
+$key.BackColor = [Drawing.Color]::FromArgb(8,8,10)
+$key.ForeColor = [Drawing.Color]::White
+$key.BorderStyle = 'FixedSingle'
+$key.TextAlign = 'Center'
+$right.Controls.Add($key)
+
+$button = New-Object Windows.Forms.Button
+$button.Text = 'UNLOCK / VERIFY KEY'
+$button.Location = New-Object Drawing.Point(35,309)
+$button.Size = New-Object Drawing.Size(373,45)
+$button.FlatStyle = 'Flat'
+$button.FlatAppearance.BorderSize = 1
+$button.FlatAppearance.BorderColor = [Drawing.Color]::FromArgb(235,55,55)
+$button.BackColor = [Drawing.Color]::FromArgb(100,24,29)
+$button.ForeColor = [Drawing.Color]::White
+$button.Font = New-Object Drawing.Font('Segoe UI',10,[Drawing.FontStyle]::Bold)
+$right.Controls.Add($button)
+
+$status = New-Label '*  LOCK ACTIVE  //  AWAITING KEY' 9 ([Drawing.Color]::FromArgb(235,55,55)) 'MiddleCenter'
+$status.Location = New-Object Drawing.Point(35,367)
+$status.Size = New-Object Drawing.Size(373,27)
+$right.Controls.Add($status)
+
+$info = New-Label 'SYSTEM ID  CN-7F42-LOCK   |   SESSION  SIM-2026-11   |   MODE  AWARENESS DEMO' 8 ([Drawing.Color]::FromArgb(135,135,142)) 'MiddleCenter'
+$info.Location = New-Object Drawing.Point(35,414)
+$info.Size = New-Object Drawing.Size(373,55)
+$right.Controls.Add($info)
+
+$esc = New-Label 'ESC  ->  EXIT SIMULATION' 9 ([Drawing.Color]::FromArgb(165,165,172)) 'MiddleCenter'
+$esc.Location = New-Object Drawing.Point(35,510)
+$esc.Size = New-Object Drawing.Size(373,28)
+$right.Controls.Add($esc)
+
+$foot = New-Label 'AWARENESS SIMULATION  *  NO FILES ARE ACTUALLY ENCRYPTED OR MODIFIED' 9 ([Drawing.Color]::FromArgb(80,210,125)) 'MiddleCenter'
+$foot.Dock = 'Bottom'
+$foot.Height = 35
+$root.Controls.Add($foot)
+
+$imagePath = Join-Path $env:TEMP 'catnap-image.jpg'
+$imageUrl = 'https://raw.githubusercontent.com/kris1019/fake-ransomware-demo/main/images.jpg'
+try {
+    Invoke-WebRequest -UseBasicParsing -Uri $imageUrl -OutFile $imagePath -ErrorAction Stop
+} catch {
+    & curl.exe -k -L -sS $imageUrl -o $imagePath
+}
+if(Test-Path $imagePath) {
+    try { $pictureBox.Image = [Drawing.Image]::FromFile($imagePath) } catch {}
+}
+
+$end = [DateTime]::Now.AddHours(24)
+$timer = New-Object Windows.Forms.Timer
+$timer.Interval = 1000
+$timer.Tag = [pscustomobject]@{End=$end;Label=$count}
+$timer.Add_Tick({
+    $s = $_.Sender.Tag
+    $r = $s.End - [DateTime]::Now
+    if($r.TotalSeconds -le 0) {
+        $s.Label.Text = '00:00:00'
+        $_.Sender.Stop()
+        return
+    }
+    $s.Label.Text = '{0:00}:{1:00}:{2:00}' -f [math]::Floor($r.TotalHours),$r.Minutes,$r.Seconds
+})
+
+$verify = {
+    $status.Text = '*  KEY REJECTED  //  ACCESS REMAINS LOCKED'
+    $key.Clear()
+    $key.Focus()
+}
+$button.Add_Click($verify)
+$key.Add_KeyDown({
+    param($s,$e)
+    if($e.KeyCode -eq 'Enter') {
+        & $verify
+        $e.SuppressKeyPress = $true
+    }
+})
+$form.Add_KeyDown({
+    param($s,$e)
+    if($e.KeyCode -eq 'Escape') { $s.Close() }
+})
+
+$timer.Start()
+$form.Add_Shown({$key.Focus()})
+[void]$form.ShowDialog()
+$timer.Stop()
+if($pictureBox.Image){$pictureBox.Image.Dispose()}
+$form.Dispose()
