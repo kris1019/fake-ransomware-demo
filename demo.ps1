@@ -49,9 +49,8 @@ $panel.Controls.Add($keyBox)
 $status = Add-Text 'STATUS: CATNAP LOCK ACTIVE' 60 405 13 ([System.Drawing.Color]::Red)
 $notice = Add-Text 'AWARENESS SIMULATION' 60 445 10 ([System.Drawing.Color]::DimGray)
 
-# Image loading only: use the requested cat image URL through PictureBox.LoadAsync.
-# PictureBox supports remote image URLs and asynchronous loading.
-$imageUrl = 'https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=718&h=479'
+# Use the requested image hosted in the user's GitHub repository.
+$imageUrl = 'https://raw.githubusercontent.com/kris1019/cat-picure-evil/main/images.jpg'
 $pictureBox = New-Object System.Windows.Forms.PictureBox
 $pictureBox.Location = New-Object System.Drawing.Point(760,120)
 $pictureBox.Size = New-Object System.Drawing.Size(560,374)
@@ -87,7 +86,6 @@ $timer.Tag = [pscustomobject]@{
 
 $timer.Add_Tick({
     param($sender, $eventArgs)
-
     $state = $sender.Tag
     $remaining = $state.EndTime - [DateTime]::Now
 
@@ -100,13 +98,11 @@ $timer.Add_Tick({
     $hours = [math]::Floor($remaining.TotalHours)
     $minutes = $remaining.Minutes
     $seconds = $remaining.Seconds
-
     $state.Label.Text = '{0:00}:{1:00}:{2:00}' -f $hours,$minutes,$seconds
 })
 
 $keyBox.Add_KeyDown({
-    param($sender, $eventArgs)
-
+    param($sender,$eventArgs)
     if ($eventArgs.KeyCode -eq [System.Windows.Forms.Keys]::Enter) {
         $status.Text = 'RECOVERY KEY REJECTED'
         $sender.Clear()
@@ -115,8 +111,7 @@ $keyBox.Add_KeyDown({
 })
 
 $form.Add_KeyDown({
-    param($sender, $eventArgs)
-
+    param($sender,$eventArgs)
     if ($eventArgs.KeyCode -eq [System.Windows.Forms.Keys]::Escape) {
         $sender.Close()
     }
