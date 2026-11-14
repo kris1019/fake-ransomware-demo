@@ -78,9 +78,10 @@ $stats.Location = New-Object Drawing.Point(25,198)
 $stats.Size = New-Object Drawing.Size(650,92)
 $left.Controls.Add($stats)
 
+$fakeFileCount = Get-Random -Minimum 347 -Maximum 9826
 $items = @(
     @('ENCRYPTION','AES-256 / CATNAP',18),
-    @('FILES LOCKED','1,284',230),
+    @('FILES LOCKED',('{0:N0}' -f $fakeFileCount),230),
     @('STATUS','LOCKED',450)
 )
 foreach($q in $items) {
