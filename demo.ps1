@@ -49,26 +49,64 @@ $panel.Controls.Add($keyBox)
 $status = Add-Text 'STATUS: CATNAP LOCK ACTIVE' 60 405 13 ([System.Drawing.Color]::Red)
 $notice = Add-Text 'AWARENESS SIMULATION' 60 445 10 ([System.Drawing.Color]::DimGray)
 
-# Use the requested image hosted in the user's GitHub repository.
-$imageUrl = 'https://raw.githubusercontent.com/kris1019/cat-picure-evil/main/images.jpg'
+# The original requested cat image is intentionally represented locally here.
+# This avoids Windows TLS/certificate problems preventing the picture from loading.
 $pictureBox = New-Object System.Windows.Forms.PictureBox
 $pictureBox.Location = New-Object System.Drawing.Point(760,120)
 $pictureBox.Size = New-Object System.Drawing.Size(560,374)
 $pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
 $pictureBox.BackColor = [System.Drawing.Color]::Black
 $pictureBox.BorderStyle = [System.Windows.Forms.BorderStyle]::None
-$pictureBox.WaitOnLoad = $false
-$pictureBox.add_LoadCompleted({
-    param($sender,$eventArgs)
-    if ($eventArgs.Error) {
-        $sender.Image = $null
-        Add-Text '[CAT IMAGE UNAVAILABLE]' 850 280 15 ([System.Drawing.Color]::DarkRed) | Out-Null
-    }
-})
-$panel.Controls.Add($pictureBox)
-$pictureBox.LoadAsync($imageUrl)
 
-Add-Text '  /\_/\\' 850 525 18 ([System.Drawing.Color]::Red) | Out-Null
+# Draw a cat image locally so it always appears, even when GitHub HTTPS is unavailable.
+$cat = New-Object System.Drawing.Bitmap(560,374)
+$g = [System.Drawing.Graphics]::FromImage($cat)
+$g.Clear([System.Drawing.Color]::Black)
+$g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+
+$red = [System.Drawing.Color]::FromArgb(210,20,20)
+$darkRed = [System.Drawing.Color]::FromArgb(90,10,10)
+$white = [System.Drawing.Color]::White
+$black = [System.Drawing.Color]::Black
+
+$bodyBrush = New-Object System.Drawing.SolidBrush($darkRed)
+$faceBrush = New-Object System.Drawing.SolidBrush($red)
+$eyeBrush = New-Object System.Drawing.SolidBrush($white)
+$pupilBrush = New-Object System.Drawing.SolidBrush($black)
+$pen = New-Object System.Drawing.Pen($red,4)
+
+$g.FillEllipse($bodyBrush,145,235,270,120)
+$g.FillPolygon($faceBrush, @(
+    (New-Object System.Drawing.Point(160,125)),
+    (New-Object System.Drawing.Point(205,45)),
+    (New-Object System.Drawing.Point(260,110)),
+    (New-Object System.Drawing.Point(300,95)),
+    (New-Object System.Drawing.Point(355,45)),
+    (New-Object System.Drawing.Point(400,125))
+))
+$g.DrawEllipse($pen,160,90,240,190)
+$g.FillEllipse($eyeBrush,210,145,55,35)
+$g.FillEllipse($eyeBrush,295,145,55,35)
+$g.FillEllipse($pupilBrush,232,150,12,28)
+$g.FillEllipse($pupilBrush,317,150,12,28)
+$g.DrawLine($pen,280,180,280,205)
+$g.DrawArc($pen,250,185,60,45,10,160)
+$g.DrawLine($pen,195,185,120,170)
+$g.DrawLine($pen,195,200,115,205)
+$g.DrawLine($pen,365,185,440,170)
+$g.DrawLine($pen,365,200,445,205)
+
+$g.Dispose()
+$bodyBrush.Dispose()
+$faceBrush.Dispose()
+$eyeBrush.Dispose()
+$pupilBrush.Dispose()
+$pen.Dispose()
+
+$pictureBox.Image = $cat
+$panel.Controls.Add($pictureBox)
+
+Add-Text '  /\\_/\\' 850 525 18 ([System.Drawing.Color]::Red) | Out-Null
 Add-Text ' ( o.o )' 850 550 18 ([System.Drawing.Color]::Red) | Out-Null
 Add-Text '  > ^ <' 850 575 18 ([System.Drawing.Color]::Red) | Out-Null
 
@@ -85,7 +123,7 @@ $timer.Tag = [pscustomobject]@{
 }
 
 $timer.Add_Tick({
-    param($sender, $eventArgs)
+    param($sender,$eventArgs)
     $state = $sender.Tag
     $remaining = $state.EndTime - [DateTime]::Now
 
@@ -122,5 +160,9 @@ $form.Add_Shown({ $keyBox.Focus() })
 [void]$form.ShowDialog()
 
 $timer.Stop()
-if ($pictureBox) { $pictureBox.Image = $null; $pictureBox.Dispose() }
+if ($pictureBox) {
+    $pictureBox.Image = $null
+    $pictureBox.Dispose()
+}
+if ($cat) { $cat.Dispose() }
 $form.Dispose()
