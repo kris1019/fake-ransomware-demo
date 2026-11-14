@@ -95,23 +95,6 @@ foreach($q in $items) {
     $stats.Controls.Add($v)
 }
 
-$imageFrame = New-Panel ([Drawing.Color]::Black)
-$imageFrame.Location = New-Object Drawing.Point(25,308)
-$imageFrame.Size = New-Object Drawing.Size(650,210)
-$left.Controls.Add($imageFrame)
-
-$pictureBox = New-Object Windows.Forms.PictureBox
-$pictureBox.Location = New-Object Drawing.Point(3,3)
-$pictureBox.Size = New-Object Drawing.Size(642,204)
-$pictureBox.SizeMode = 'Zoom'
-$pictureBox.BackColor = [Drawing.Color]::Black
-$imageFrame.Controls.Add($pictureBox)
-
-$preview = New-Label 'ENCRYPTED PREVIEW // VISUAL SIMULATION' 8 ([Drawing.Color]::FromArgb(140,140,148)) 'MiddleCenter'
-$preview.Location = New-Object Drawing.Point(25,527)
-$preview.Size = New-Object Drawing.Size(650,24)
-$left.Controls.Add($preview)
-
 $right = New-Panel ([Drawing.Color]::FromArgb(24,15,17))
 $right.Location = New-Object Drawing.Point(755,18)
 $right.Size = New-Object Drawing.Size(443,574)
@@ -188,17 +171,6 @@ $foot = New-Label 'AWARENESS SIMULATION  *  NO FILES ARE ACTUALLY ENCRYPTED OR M
 $foot.Dock = 'Bottom'
 $foot.Height = 35
 $root.Controls.Add($foot)
-
-$imagePath = Join-Path $env:TEMP 'catnap-image.jpg'
-$imageUrl = 'https://raw.githubusercontent.com/kris1019/fake-ransomware-demo/main/images.jpg'
-try {
-    Invoke-WebRequest -UseBasicParsing -Uri $imageUrl -OutFile $imagePath -ErrorAction Stop
-} catch {
-    & curl.exe -k -L -sS $imageUrl -o $imagePath
-}
-if(Test-Path $imagePath) {
-    try { $pictureBox.Image = [Drawing.Image]::FromFile($imagePath) } catch {}
-}
 
 $end = [DateTime]::Now.AddHours(24)
 $timer = New-Object Windows.Forms.Timer
