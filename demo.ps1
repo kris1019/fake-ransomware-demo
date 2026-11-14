@@ -49,40 +49,35 @@ $panel.Controls.Add($keyBox)
 $status = Add-Text 'STATUS: CATNAP LOCK ACTIVE' 60 405 13 ([System.Drawing.Color]::Red)
 $notice = Add-Text 'AWARENESS SIMULATION' 60 445 10 ([System.Drawing.Color]::DimGray)
 
+# Image loading only: use the requested cat image URL through PictureBox.LoadAsync.
+# PictureBox supports remote image URLs and asynchronous loading.
 $imageUrl = 'https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=718&h=479'
-$pictureBox = $null
-$picture = $null
-$wc = $null
-$ms = $null
+$pictureBox = New-Object System.Windows.Forms.PictureBox
+$pictureBox.Location = New-Object System.Drawing.Point(760,120)
+$pictureBox.Size = New-Object System.Drawing.Size(560,374)
+$pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
+$pictureBox.BackColor = [System.Drawing.Color]::Black
+$pictureBox.BorderStyle = [System.Windows.Forms.BorderStyle]::None
+$pictureBox.WaitOnLoad = $false
+$pictureBox.add_LoadCompleted({
+    param($sender,$eventArgs)
+    if ($eventArgs.Error) {
+        $sender.Image = $null
+        Add-Text '[CAT IMAGE UNAVAILABLE]' 850 280 15 ([System.Drawing.Color]::DarkRed) | Out-Null
+    }
+})
+$panel.Controls.Add($pictureBox)
+$pictureBox.LoadAsync($imageUrl)
 
-try {
-    $wc = New-Object System.Net.WebClient
-    $bytes = $wc.DownloadData($imageUrl)
-    $ms = New-Object System.IO.MemoryStream(,$bytes)
-    $picture = [System.Drawing.Image]::FromStream($ms)
-
-    $pictureBox = New-Object System.Windows.Forms.PictureBox
-    $pictureBox.Location = New-Object System.Drawing.Point(760,120)
-    $pictureBox.Size = New-Object System.Drawing.Size(560,374)
-    $pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
-    $pictureBox.BackColor = [System.Drawing.Color]::Black
-    $pictureBox.Image = $picture
-    $panel.Controls.Add($pictureBox)
-}
-catch {
-    Add-Text '[CAT IMAGE UNAVAILABLE]' 850 280 15 ([System.Drawing.Color]::DarkRed)
-}
-
-Add-Text '   /\\_/\\' 850 525 18 ([System.Drawing.Color]::Red)
-Add-Text '   ( o.o )' 850 550 18 ([System.Drawing.Color]::Red)
-Add-Text '    > ^ <' 850 575 18 ([System.Drawing.Color]::Red)
+Add-Text '  /\_/\\' 850 525 18 ([System.Drawing.Color]::Red) | Out-Null
+Add-Text ' ( o.o )' 850 550 18 ([System.Drawing.Color]::Red) | Out-Null
+Add-Text '  > ^ <' 850 575 18 ([System.Drawing.Color]::Red) | Out-Null
 
 $scary = Add-Text 'THE CAT IS WATCHING.' 60 500 15 ([System.Drawing.Color]::DarkRed)
 $scary2 = Add-Text 'YOUR DEADLINE IS RUNNING.' 60 535 15 ([System.Drawing.Color]::DarkRed)
 $scary3 = Add-Text 'NO PURRS. NO MERCY.' 60 570 15 ([System.Drawing.Color]::DarkRed)
 
-# Robust countdown: the state is stored on the Timer itself, so the
-# PowerShell event-handler scope cannot lose the countdown value.
+# Robust countdown: state is stored on the Timer itself.
 $timer = New-Object System.Windows.Forms.Timer
 $timer.Interval = 1000
 $timer.Tag = [pscustomobject]@{
@@ -133,7 +128,4 @@ $form.Add_Shown({ $keyBox.Focus() })
 
 $timer.Stop()
 if ($pictureBox) { $pictureBox.Image = $null; $pictureBox.Dispose() }
-if ($picture) { $picture.Dispose() }
-if ($ms) { $ms.Dispose() }
-if ($wc) { $wc.Dispose() }
 $form.Dispose()
