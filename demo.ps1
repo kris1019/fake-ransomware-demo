@@ -13,15 +13,15 @@ $form.KeyPreview = $true
 
 $panel = New-Object System.Windows.Forms.Panel
 $panel.Dock = [System.Windows.Forms.DockStyle]::Fill
-$panel.BackColor = [System.Drawing.Color]::Black
+$panel.BackColor = [System.Drawing.Color]::FromArgb(8,8,8)
 $form.Controls.Add($panel)
 
-function Add-Text {
+function New-Label {
     param([string]$Text,[int]$X,[int]$Y,[int]$Size,[System.Drawing.Color]$Color)
     $label = New-Object System.Windows.Forms.Label
     $label.Text = $Text
     $label.ForeColor = $Color
-    $label.BackColor = [System.Drawing.Color]::Black
+    $label.BackColor = [System.Drawing.Color]::Transparent
     $label.Font = New-Object System.Drawing.Font('Consolas',$Size,[System.Drawing.FontStyle]::Bold)
     $label.AutoSize = $true
     $label.Location = New-Object System.Drawing.Point($X,$Y)
@@ -29,60 +29,87 @@ function Add-Text {
     return $label
 }
 
-$title = Add-Text '!!! CATNAP HAS ENCRYPTED YOUR FILES !!!' 55 28 22 ([System.Drawing.Color]::Red)
-$warning = Add-Text 'CATNAP // FELINE ENCRYPTION SYSTEM' 60 100 15 ([System.Drawing.Color]::White)
-Add-Text 'Your recovery window is running.' 60 135 14 ([System.Drawing.Color]::White) | Out-Null
-
-Add-Text 'CATNAP COUNTDOWN' 65 190 12 ([System.Drawing.Color]::Gray) | Out-Null
-$countdownLabel = Add-Text '24:00:00' 60 210 34 ([System.Drawing.Color]::Red)
-
-Add-Text 'ENTER CATNAP RECOVERY KEY' 60 295 14 ([System.Drawing.Color]::White) | Out-Null
-$keyBox = New-Object System.Windows.Forms.TextBox
-$keyBox.Size = New-Object System.Drawing.Size(570,48)
-$keyBox.Font = New-Object System.Drawing.Font('Consolas',18)
-$keyBox.BackColor = [System.Drawing.Color]::FromArgb(20,20,20)
-$keyBox.ForeColor = [System.Drawing.Color]::White
-$keyBox.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
-$keyBox.Location = New-Object System.Drawing.Point(60,330)
-$panel.Controls.Add($keyBox)
-
-$status = Add-Text 'STATUS: CATNAP LOCK ACTIVE' 60 405 13 ([System.Drawing.Color]::Red)
-Add-Text 'AWARENESS SIMULATION' 60 445 10 ([System.Drawing.Color]::DimGray) | Out-Null
+New-Label '!!! CATNAP HAS ENCRYPTED YOUR FILES !!!' 60 35 24 ([System.Drawing.Color]::Red) | Out-Null
+New-Label 'CATNAP // FELINE ENCRYPTION SYSTEM' 64 82 12 ([System.Drawing.Color]::White) | Out-Null
+New-Label 'YOUR RECOVERY WINDOW IS RUNNING' 64 110 11 ([System.Drawing.Color]::Gray) | Out-Null
 
 $pictureBox = New-Object System.Windows.Forms.PictureBox
-$pictureBox.Location = New-Object System.Drawing.Point(760,120)
-$pictureBox.Size = New-Object System.Drawing.Size(560,374)
+$pictureBox.Location = New-Object System.Drawing.Point(60,155)
+$pictureBox.Size = New-Object System.Drawing.Size(620,414)
 $pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
 $pictureBox.BackColor = [System.Drawing.Color]::Black
-$pictureBox.BorderStyle = [System.Windows.Forms.BorderStyle]::None
+$pictureBox.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
+$panel.Controls.Add($pictureBox)
 
-# Download the exact supplied image from this GitHub repository into TEMP.
+$side = New-Object System.Windows.Forms.Panel
+$side.Location = New-Object System.Drawing.Point(720,155)
+$side.Size = New-Object System.Drawing.Size(520,414)
+$side.BackColor = [System.Drawing.Color]::FromArgb(16,16,16)
+$side.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
+$panel.Controls.Add($side)
+
+$sideTitle = New-Object System.Windows.Forms.Label
+$sideTitle.Text = 'RECOVERY CONSOLE'
+$sideTitle.ForeColor = [System.Drawing.Color]::Red
+$sideTitle.Font = New-Object System.Drawing.Font('Consolas',16,[System.Drawing.FontStyle]::Bold)
+$sideTitle.AutoSize = $true
+$sideTitle.Location = New-Object System.Drawing.Point(28,25)
+$side.Controls.Add($sideTitle)
+
+$sideText = New-Object System.Windows.Forms.Label
+$sideText.Text = 'ENTER YOUR RECOVERY KEY' + [Environment]::NewLine + 'TO RESTORE ACCESS:'
+$sideText.ForeColor = [System.Drawing.Color]::White
+$sideText.Font = New-Object System.Drawing.Font('Consolas',11,[System.Drawing.FontStyle]::Bold)
+$sideText.AutoSize = $true
+$sideText.Location = New-Object System.Drawing.Point(28,70)
+$side.Controls.Add($sideText)
+
+$keyBox = New-Object System.Windows.Forms.TextBox
+$keyBox.Size = New-Object System.Drawing.Size(460,52)
+$keyBox.Font = New-Object System.Drawing.Font('Consolas',18)
+$keyBox.BackColor = [System.Drawing.Color]::FromArgb(24,24,24)
+$keyBox.ForeColor = [System.Drawing.Color]::White
+$keyBox.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
+$keyBox.Location = New-Object System.Drawing.Point(28,145)
+$side.Controls.Add($keyBox)
+
+$status = New-Object System.Windows.Forms.Label
+$status.Text = 'STATUS: CATNAP LOCK ACTIVE'
+$status.ForeColor = [System.Drawing.Color]::Red
+$status.Font = New-Object System.Drawing.Font('Consolas',11,[System.Drawing.FontStyle]::Bold)
+$status.AutoSize = $true
+$status.Location = New-Object System.Drawing.Point(28,225)
+$side.Controls.Add($status)
+
+$timerCaption = New-Object System.Windows.Forms.Label
+$timerCaption.Text = 'TIME REMAINING'
+$timerCaption.ForeColor = [System.Drawing.Color]::Gray
+$timerCaption.Font = New-Object System.Drawing.Font('Consolas',10,[System.Drawing.FontStyle]::Bold)
+$timerCaption.AutoSize = $true
+$timerCaption.Location = New-Object System.Drawing.Point(28,270)
+$side.Controls.Add($timerCaption)
+
+$countdownLabel = New-Object System.Windows.Forms.Label
+$countdownLabel.Text = '24:00:00'
+$countdownLabel.ForeColor = [System.Drawing.Color]::Red
+$countdownLabel.Font = New-Object System.Drawing.Font('Consolas',34,[System.Drawing.FontStyle]::Bold)
+$countdownLabel.AutoSize = $true
+$countdownLabel.Location = New-Object System.Drawing.Point(24,300)
+$side.Controls.Add($countdownLabel)
+
+New-Label 'AWARENESS SIMULATION  •  NO FILES ARE ACTUALLY ENCRYPTED' 60 600 10 ([System.Drawing.Color]::DimGray) | Out-Null
+New-Label 'ESC  •  EXIT SIMULATION' 60 625 10 ([System.Drawing.Color]::DimGray) | Out-Null
+
 $imagePath = Join-Path $env:TEMP 'catnap-image.jpg'
 $imageUrl = 'https://raw.githubusercontent.com/kris1019/fake-ransomware-demo/main/images.jpg'
-
 try {
     Invoke-WebRequest -UseBasicParsing -Uri $imageUrl -OutFile $imagePath -ErrorAction Stop
 } catch {
-    # Fallback for Windows machines whose Schannel certificate store is broken.
     & curl.exe -k -L -sS $imageUrl -o $imagePath
 }
-
-if (-not (Test-Path $imagePath)) {
-    throw 'Could not download the Catnap image from GitHub.'
-}
-
-$stream = $null
+if (-not (Test-Path $imagePath)) { throw 'Could not download the Catnap image from GitHub.' }
 $cat = [System.Drawing.Image]::FromFile($imagePath)
 $pictureBox.Image = $cat
-$panel.Controls.Add($pictureBox)
-
-Add-Text '  /\\_/\\' 850 525 18 ([System.Drawing.Color]::Red) | Out-Null
-Add-Text ' ( o.o )' 850 550 18 ([System.Drawing.Color]::Red) | Out-Null
-Add-Text '  > ^ <' 850 575 18 ([System.Drawing.Color]::Red) | Out-Null
-
-Add-Text 'THE CAT IS WATCHING.' 60 500 15 ([System.Drawing.Color]::DarkRed) | Out-Null
-Add-Text 'YOUR DEADLINE IS RUNNING.' 60 535 15 ([System.Drawing.Color]::DarkRed) | Out-Null
-Add-Text 'NO PURRS. NO MERCY.' 60 570 15 ([System.Drawing.Color]::DarkRed) | Out-Null
 
 $timer = New-Object System.Windows.Forms.Timer
 $timer.Interval = 1000
