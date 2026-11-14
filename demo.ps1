@@ -80,22 +80,26 @@ $scary = Add-Text 'THE CAT IS WATCHING.' 60 500 15 ([System.Drawing.Color]::Dark
 $scary2 = Add-Text 'YOUR DEADLINE IS RUNNING.' 60 535 15 ([System.Drawing.Color]::DarkRed)
 $scary3 = Add-Text 'NO PURRS. NO MERCY.' 60 570 15 ([System.Drawing.Color]::DarkRed)
 
-# Use the system clock rather than decrementing a PowerShell variable.
-# This avoids event-handler scope issues and keeps the displayed countdown moving.
-$endTime = [DateTime]::Now.AddHours(24)
+# Store the countdown in a mutable object.
+# Hashtable mutation persists correctly inside the WinForms event handler.
+$state = @{ Remaining = 86400 }
+
 $timer = New-Object System.Windows.Forms.Timer
-$timer.Interval = 250
+$timer.Interval = 1000
 
 $timer.Add_Tick({
-    $remaining = $endTime - [DateTime]::Now
-    if ($remaining.TotalSeconds -le 0) {
-        $countdownLabel.Text = '00:00:00'
-        $timer.Stop()
-    } else {
-        $h = [math]::Floor($remaining.TotalHours)
-        $m = $remaining.Minutes
-        $s = $remaining.Seconds
+    if ($state.Remaining -gt 0) {
+        $state.Remaining = $state.Remaining - 1
+
+        $h = [math]::Floor($state.Remaining / 3600)
+        $m = [math]::Floor(($state.Remaining % 3600) / 60)
+        $s = $state.Remaining % 60
+
         $countdownLabel.Text = '{0:00}:{1:00}:{2:00}' -f $h,$m,$s
+    }
+    else {
+        $countdownLabel.Text = '00:00:00'
+        $timer.Enabled = $false
     }
 })
 
