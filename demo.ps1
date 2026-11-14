@@ -1,79 +1,70 @@
 $ErrorActionPreference = "SilentlyContinue"
 
-# Harmless ransomware-awareness UI simulation.
-# No files are encrypted, deleted, uploaded, or modified.
+# HARMLESS FULLSCREEN VISUAL PRANK
+# No files are read, encrypted, deleted, uploaded, or modified.
 
-Add-Type @"
-using System;
-using System.Runtime.InteropServices;
-public class Win32 {
-    [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-    [DllImport("kernel32.dll")] public static extern IntPtr GetConsoleWindow();
-}
-"@
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
-$hwnd = [Win32]::GetConsoleWindow()
-[Win32]::ShowWindow($hwnd, 3) | Out-Null
-$Host.UI.RawUI.WindowTitle = "CRYPTLOCK"
-[Console]::CursorVisible = $false
+$form = New-Object System.Windows.Forms.Form
+$form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::None
+$form.WindowState = [System.Windows.Forms.FormWindowState]::Maximized
+$form.BackColor = [System.Drawing.Color]::Black
+$form.TopMost = $true
+$form.KeyPreview = $true
 
-$esc = [char]27
-$files = @(
-    "Documents\family_photos.zip",
-    "Documents\financial_records.xlsx",
-    "Desktop\projects\backup.dat",
-    "Downloads\archive_01.bin",
-    "Documents\school\notes.docx"
+$font = New-Object System.Drawing.Font("Consolas", 22, [System.Drawing.FontStyle]::Bold)
+$small = New-Object System.Drawing.Font("Consolas", 12, [System.Drawing.FontStyle]::Regular)
+
+$label = New-Object System.Windows.Forms.Label
+$label.Dock = [System.Windows.Forms.DockStyle]::Fill
+$label.TextAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+$label.Font = $font
+$label.ForeColor = [System.Drawing.Color]::Red
+$label.BackColor = [System.Drawing.Color]::Black
+$form.Controls.Add($label)
+
+$messages = @(
+    "!! SECURITY BREACH DETECTED !!",
+    "",
+    "SYSTEM INTEGRITY COMPROMISED",
+    "",
+    "UNAUTHORIZED ACCESS DETECTED",
+    "SCANNING LOCAL SYSTEM...",
+    "",
+    "CRITICAL WARNING",
+    "",
+    "DATA ACCESS: SIMULATED",
+    "ENCRYPTION: SIMULATED",
+    "",
+    "DO NOT PANIC",
+    "",
+    "SECURITY SIMULATION ACTIVE"
 )
 
-while ($true) {
-    Clear-Host
+$i = 0
+$flash = $false
 
-    Write-Host "================================================================================" -ForegroundColor DarkRed
-    Write-Host "                         CRYPTLOCK SECURITY NOTICE" -ForegroundColor Red
-    Write-Host "================================================================================" -ForegroundColor DarkRed
-    Write-Host ""
-    Write-Host "                 YOUR FILES AND DOCUMENTS HAVE BEEN ENCRYPTED!" -ForegroundColor Red
-    Write-Host ""
-    Write-Host "     ████████████████" -ForegroundColor Cyan
-    Write-Host "     ██            ██" -ForegroundColor Cyan
-    Write-Host "     ██     🔒     ██" -ForegroundColor Cyan
-    Write-Host "     ██            ██" -ForegroundColor Cyan
-    Write-Host "     ████████████████" -ForegroundColor Cyan
-    Write-Host ""
-    Write-Host "WHAT HAPPENED TO MY FILES?" -ForegroundColor Yellow
-    Write-Host "Your documents, photos and other files are being shown as encrypted."
-    Write-Host "Encryption algorithm: AES-256"
-    Write-Host "Recovery identifier: CL-$((Get-Random -Minimum 100000 -Maximum 999999))"
-    Write-Host ""
-    Write-Host "FILES CURRENTLY DISPLAYED:" -ForegroundColor Yellow
-    foreach ($f in $files) {
-        Write-Host "  [+] $f" -ForegroundColor DarkGray
+$timer = New-Object System.Windows.Forms.Timer
+$timer.Interval = 500
+$timer.Add_Tick({
+    $flash = -not $flash
+    if ($flash) {
+        $label.ForeColor = [System.Drawing.Color]::Red
+        $label.Text = $messages[$i % $messages.Count]
+        $i++
+    } else {
+        $label.ForeColor = [System.Drawing.Color]::DarkRed
+        $label.Text = $messages[$i % $messages.Count]
     }
-    Write-Host ""
-    Write-Host "TIME LEFT" -ForegroundColor Yellow
-    Write-Host "                         23 : 59 : 59" -ForegroundColor Red
-    Write-Host ""
-    Write-Host "RECOVERY STATUS" -ForegroundColor Yellow
-    Write-Host "  Recovery key: NOT AVAILABLE"
-    Write-Host "  Data status : DISPLAY SIMULATION"
-    Write-Host ""
-    Write-Host "-------------------------------------------------------------------------------"
-    Write-Host "  IMPORTANT: THIS WINDOW IS A HARMLESS SECURITY-AWARENESS DEMONSTRATION." -ForegroundColor Green
-    Write-Host "  NO REAL FILES ARE BEING ENCRYPTED OR MODIFIED." -ForegroundColor Green
-    Write-Host "-------------------------------------------------------------------------------"
-    Write-Host ""
-    Write-Host "  [Any key] Exit" -ForegroundColor Gray
+})
 
-    if ([Console]::KeyAvailable) {
-        [Console]::ReadKey($true) | Out-Null
-        break
-    }
+# Any key exits the visual prank.
+$form.Add_KeyDown({
+    $form.Close()
+})
 
-    Start-Sleep -Milliseconds 250
-}
-
-[Console]::CursorVisible = $true
-Clear-Host
-Write-Host "Security demonstration ended." -ForegroundColor Green
-Start-Sleep -Milliseconds 700
+$timer.Start()
+[void]$form.ShowDialog()
+$timer.Stop()
+$form.Dispose()
