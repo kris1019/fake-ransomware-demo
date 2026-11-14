@@ -68,11 +68,12 @@ try {
     $pictureBox.BackColor = [System.Drawing.Color]::Black
     $pictureBox.Image = $picture
     $panel.Controls.Add($pictureBox)
-} catch {
+}
+catch {
     Add-Text '[CAT IMAGE UNAVAILABLE]' 850 280 15 ([System.Drawing.Color]::DarkRed)
 }
 
-Add-Text '    /\\_/\\' 850 525 18 ([System.Drawing.Color]::Red)
+Add-Text '   /\\_/\\' 850 525 18 ([System.Drawing.Color]::Red)
 Add-Text '   ( o.o )' 850 550 18 ([System.Drawing.Color]::Red)
 Add-Text '    > ^ <' 850 575 18 ([System.Drawing.Color]::Red)
 
@@ -80,39 +81,49 @@ $scary = Add-Text 'THE CAT IS WATCHING.' 60 500 15 ([System.Drawing.Color]::Dark
 $scary2 = Add-Text 'YOUR DEADLINE IS RUNNING.' 60 535 15 ([System.Drawing.Color]::DarkRed)
 $scary3 = Add-Text 'NO PURRS. NO MERCY.' 60 570 15 ([System.Drawing.Color]::DarkRed)
 
-# Store the countdown in a mutable object.
-# Hashtable mutation persists correctly inside the WinForms event handler.
-$state = @{ Remaining = 86400 }
-
+# Robust countdown: the state is stored on the Timer itself, so the
+# PowerShell event-handler scope cannot lose the countdown value.
 $timer = New-Object System.Windows.Forms.Timer
 $timer.Interval = 1000
+$timer.Tag = [pscustomobject]@{
+    EndTime = [DateTime]::Now.AddHours(24)
+    Label = $countdownLabel
+}
 
 $timer.Add_Tick({
-    if ($state.Remaining -gt 0) {
-        $state.Remaining = $state.Remaining - 1
+    param($sender, $eventArgs)
 
-        $h = [math]::Floor($state.Remaining / 3600)
-        $m = [math]::Floor(($state.Remaining % 3600) / 60)
-        $s = $state.Remaining % 60
+    $state = $sender.Tag
+    $remaining = $state.EndTime - [DateTime]::Now
 
-        $countdownLabel.Text = '{0:00}:{1:00}:{2:00}' -f $h,$m,$s
+    if ($remaining.TotalSeconds -le 0) {
+        $state.Label.Text = '00:00:00'
+        $sender.Stop()
+        return
     }
-    else {
-        $countdownLabel.Text = '00:00:00'
-        $timer.Enabled = $false
-    }
+
+    $hours = [math]::Floor($remaining.TotalHours)
+    $minutes = $remaining.Minutes
+    $seconds = $remaining.Seconds
+
+    $state.Label.Text = '{0:00}:{1:00}:{2:00}' -f $hours,$minutes,$seconds
 })
 
 $keyBox.Add_KeyDown({
-    if ($_.KeyCode -eq [System.Windows.Forms.Keys]::Enter) {
+    param($sender, $eventArgs)
+
+    if ($eventArgs.KeyCode -eq [System.Windows.Forms.Keys]::Enter) {
         $status.Text = 'RECOVERY KEY REJECTED'
-        $keyBox.Clear()
+        $sender.Clear()
+        $eventArgs.SuppressKeyPress = $true
     }
 })
 
 $form.Add_KeyDown({
-    if ($_.KeyCode -eq [System.Windows.Forms.Keys]::Escape) {
-        $form.Close()
+    param($sender, $eventArgs)
+
+    if ($eventArgs.KeyCode -eq [System.Windows.Forms.Keys]::Escape) {
+        $sender.Close()
     }
 })
 
