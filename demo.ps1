@@ -175,16 +175,14 @@ $root.Controls.Add($foot)
 $end = [DateTime]::Now.AddHours(24)
 $timer = New-Object Windows.Forms.Timer
 $timer.Interval = 1000
-$timer.Tag = [pscustomobject]@{End=$end;Label=$count}
 $timer.Add_Tick({
-    $s = $_.Sender.Tag
-    $r = $s.End - [DateTime]::Now
+    $r = $end - [DateTime]::Now
     if($r.TotalSeconds -le 0) {
-        $s.Label.Text = '00:00:00'
-        $_.Sender.Stop()
+        $count.Text = '00:00:00'
+        $timer.Stop()
         return
     }
-    $s.Label.Text = '{0:00}:{1:00}:{2:00}' -f [math]::Floor($r.TotalHours),$r.Minutes,$r.Seconds
+    $count.Text = '{0:00}:{1:00}:{2:00}' -f [math]::Floor($r.TotalHours),$r.Minutes,$r.Seconds
 })
 
 $verify = {
@@ -209,5 +207,4 @@ $timer.Start()
 $form.Add_Shown({$key.Focus()})
 [void]$form.ShowDialog()
 $timer.Stop()
-if($pictureBox.Image){$pictureBox.Image.Dispose()}
 $form.Dispose()
